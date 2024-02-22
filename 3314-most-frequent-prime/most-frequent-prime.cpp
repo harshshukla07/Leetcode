@@ -15,11 +15,14 @@ public:
         int n = mat.size();
         int m = mat[0].size();
         unordered_map<int,int> mp;
+
+        // these are the possible directions where i can move, keeping in mind Once i start moving in one direction then the direction can not be changed.
         vector<int> posR = {-1,-1,-1,0,1,1,1,0};
         vector<int> posC = {-1,0,1,1,1,0,-1,-1};
 
         for(int i=0; i<n; i++){
             for(int j=0; j<m; j++){
+                // This K loop helps me to remain on a single path throughout my iterations.
                 for(int k=0; k<8; k++){
                     int row = i, col = j, num=0;
                     while(row>=0 && row<n && col>=0 && col<m){
