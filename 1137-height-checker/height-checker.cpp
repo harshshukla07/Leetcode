@@ -9,6 +9,7 @@ public:
                 ans++;
             }
         }
+        expected.clear();
         return ans;
     }
 };
